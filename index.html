@@ -1,0 +1,3128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        BIM-CLASH | BIM & Project Management
+    </title>
+
+    <meta
+        name="description"
+        content="BIM-CLASH integra BIM, coordinación y gestión de proyectos para mejorar la planificación, coordinación y control de proyectos de arquitectura, ingeniería y construcción."
+    >
+
+    <meta
+        name="author"
+        content="BIMCLASH"
+    >
+
+
+    <!-- =====================================================
+         TIPOGRAFÍA
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+
+            --blue:
+                #65a9c2;
+
+            --blue-bright:
+                #79c3df;
+
+            --dark:
+                #07111c;
+
+            --dark-2:
+                #0b1927;
+
+            --dark-3:
+                #102538;
+
+            --white:
+                #ffffff;
+
+            --text:
+                #d9e1e7;
+
+            --muted:
+                #8d9aa6;
+
+            --light:
+                #f3f5f6;
+
+            --dark-text:
+                #07111c;
+
+            --max-width:
+                1250px;
+
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+
+            margin:
+                0;
+
+            padding:
+                0;
+
+            box-sizing:
+                border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior:
+                smooth;
+
+        }
+
+
+        body {
+
+            font-family:
+                "Montserrat",
+                Arial,
+                sans-serif;
+
+            background:
+                var(--dark);
+
+            color:
+                var(--white);
+
+            overflow-x:
+                hidden;
+
+        }
+
+
+        a {
+
+            color:
+                inherit;
+
+            text-decoration:
+                none;
+
+        }
+
+
+        img {
+
+            max-width:
+                100%;
+
+            display:
+                block;
+
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+
+            position:
+                fixed;
+
+            top:
+                0;
+
+            left:
+                0;
+
+            width:
+                100%;
+
+            z-index:
+                100;
+
+            padding:
+                18px 40px;
+
+            background:
+                rgba(
+                    7,
+                    17,
+                    28,
+                    0.68
+                );
+
+            backdrop-filter:
+                blur(14px);
+
+            border-bottom:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.06
+                );
+
+        }
+
+
+        .nav {
+
+            max-width:
+                var(--max-width);
+
+            margin:
+                auto;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+        }
+
+
+        .logo img {
+
+            width:
+                180px;
+
+            height:
+                auto;
+
+        }
+
+
+        .menu {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                30px;
+
+            font-size:
+                12px;
+
+            color:
+                #d6dde2;
+
+        }
+
+
+        .menu a {
+
+            transition:
+                0.3s ease;
+
+        }
+
+
+        .menu a:hover {
+
+            color:
+                var(--blue-bright);
+
+        }
+
+
+        .nav-button {
+
+            padding:
+                13px 20px;
+
+            background:
+                var(--blue);
+
+            color:
+                #07111c;
+
+            border-radius:
+                4px;
+
+            font-weight:
+                700;
+
+            font-size:
+                11px;
+
+            transition:
+                0.3s ease;
+
+        }
+
+
+        .nav-button:hover {
+
+            background:
+                var(--blue-bright);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            min-height:
+                100vh;
+
+            position:
+                relative;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            background:
+
+                linear-gradient(
+
+                    90deg,
+
+                    rgba(
+                        5,
+                        14,
+                        24,
+                        0.97
+                    ) 0%,
+
+                    rgba(
+                        5,
+                        14,
+                        24,
+                        0.86
+                    ) 42%,
+
+                    rgba(
+                        5,
+                        14,
+                        24,
+                        0.38
+                    ) 100%
+
+                ),
+
+                url("hero-bim.jpg");
+
+            background-size:
+                cover;
+
+            background-position:
+                center;
+
+        }
+
+
+        .hero::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        0.025
+                    ) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        0.025
+                    ) 1px,
+                    transparent 1px
+                );
+
+            background-size:
+                60px 60px;
+
+            mask-image:
+                linear-gradient(
+                    to right,
+                    black,
+                    transparent
+                );
+
+            pointer-events:
+                none;
+
+        }
+
+
+        .hero-content {
+
+            width:
+                100%;
+
+            max-width:
+                var(--max-width);
+
+            margin:
+                auto;
+
+            padding:
+                150px 40px 100px;
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+        }
+
+
+        .eyebrow {
+
+            color:
+                var(--blue-bright);
+
+            font-size:
+                11px;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                3px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                25px;
+
+            opacity:
+                0;
+
+            transform:
+                translateY(20px);
+
+            animation:
+                appear
+                0.8s
+                ease
+                forwards;
+
+        }
+
+
+        .hero h1 {
+
+            max-width:
+                900px;
+
+            font-size:
+                clamp(
+                    48px,
+                    6vw,
+                    82px
+                );
+
+            line-height:
+                0.98;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                -3px;
+
+            margin-bottom:
+                30px;
+
+            opacity:
+                0;
+
+            transform:
+                translateY(30px);
+
+            animation:
+                appear
+                0.9s
+                ease
+                0.15s
+                forwards;
+
+        }
+
+
+        .hero h1 span {
+
+            color:
+                var(--blue);
+
+        }
+
+
+        .hero-description {
+
+            max-width:
+                720px;
+
+            color:
+                var(--text);
+
+            font-size:
+                17px;
+
+            line-height:
+                1.8;
+
+            margin-bottom:
+                38px;
+
+            opacity:
+                0;
+
+            transform:
+                translateY(30px);
+
+            animation:
+                appear
+                0.9s
+                ease
+                0.3s
+                forwards;
+
+        }
+
+
+        .hero-buttons {
+
+            display:
+                flex;
+
+            gap:
+                15px;
+
+            opacity:
+                0;
+
+            transform:
+                translateY(30px);
+
+            animation:
+                appear
+                0.9s
+                ease
+                0.45s
+                forwards;
+
+        }
+
+
+        .button {
+
+            display:
+                inline-block;
+
+            padding:
+                16px 25px;
+
+            border-radius:
+                4px;
+
+            font-size:
+                12px;
+
+            font-weight:
+                700;
+
+            transition:
+                0.3s ease;
+
+        }
+
+
+        .button-primary {
+
+            background:
+                var(--blue);
+
+            color:
+                #07111c;
+
+        }
+
+
+        .button-primary:hover {
+
+            background:
+                var(--blue-bright);
+
+            transform:
+                translateY(-3px);
+
+        }
+
+
+        .button-secondary {
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.25
+                );
+
+            color:
+                white;
+
+        }
+
+
+        .button-secondary:hover {
+
+            border-color:
+                var(--blue);
+
+            color:
+                var(--blue-bright);
+
+        }
+
+
+        .hero-stats {
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                35px;
+
+            margin-top:
+                70px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                10px;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                1.5px;
+
+        }
+
+
+        .hero-stats span::before {
+
+            content:
+                "•";
+
+            color:
+                var(--blue);
+
+            margin-right:
+                10px;
+
+        }
+
+
+        /* =====================================================
+           GENERAL
+        ===================================================== */
+
+        section {
+
+            padding:
+                120px 40px;
+
+        }
+
+
+        .container {
+
+            max-width:
+                var(--max-width);
+
+            margin:
+                auto;
+
+        }
+
+
+        .section-label {
+
+            color:
+                var(--blue);
+
+            font-size:
+                11px;
+
+            font-weight:
+                700;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                3px;
+
+            margin-bottom:
+                18px;
+
+        }
+
+
+        .section-title {
+
+            max-width:
+                850px;
+
+            font-size:
+                clamp(
+                    36px,
+                    4vw,
+                    58px
+                );
+
+            line-height:
+                1.05;
+
+            letter-spacing:
+                -2px;
+
+            margin-bottom:
+                60px;
+
+        }
+
+
+        /* =====================================================
+           SERVICES
+        ===================================================== */
+
+        .services {
+
+            background:
+                var(--dark-2);
+
+        }
+
+
+        .services-intro {
+
+            max-width:
+                750px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                15px;
+
+            line-height:
+                1.8;
+
+            margin-top:
+                -30px;
+
+            margin-bottom:
+                55px;
+
+        }
+
+
+        .services-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    5,
+                    1fr
+                );
+
+            gap:
+                1px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.10
+                );
+
+        }
+
+
+        .service {
+
+            min-height:
+                350px;
+
+            padding:
+                32px;
+
+            background:
+                var(--dark-2);
+
+            position:
+                relative;
+
+            transition:
+                0.4s ease;
+
+            overflow:
+                hidden;
+
+        }
+
+
+        .service::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                120px;
+
+            height:
+                120px;
+
+            right:
+                -60px;
+
+            bottom:
+                -60px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--blue);
+
+            opacity:
+                0;
+
+            transition:
+                0.5s ease;
+
+        }
+
+
+        .service:hover {
+
+            background:
+                #102334;
+
+            transform:
+                translateY(-6px);
+
+        }
+
+
+        .service:hover::after {
+
+            opacity:
+                0.15;
+
+        }
+
+
+        .service-number {
+
+            color:
+                var(--blue);
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
+
+            margin-bottom:
+                65px;
+
+        }
+
+
+        .service-category {
+
+            color:
+                var(--muted);
+
+            font-size:
+                9px;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                1.5px;
+
+            margin-bottom:
+                10px;
+
+        }
+
+
+        .service h3 {
+
+            font-size:
+                20px;
+
+            line-height:
+                1.2;
+
+            margin-bottom:
+                16px;
+
+        }
+
+
+        .service p {
+
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        /* =====================================================
+           PROJECT MANAGEMENT
+        ===================================================== */
+
+        .project-management {
+
+            background:
+                #0d1d2b;
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+        }
+
+
+        .project-management::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                600px;
+
+            height:
+                600px;
+
+            right:
+                -200px;
+
+            top:
+                -250px;
+
+            border:
+                1px solid
+                rgba(
+                    101,
+                    169,
+                    194,
+                    0.15
+                );
+
+            transform:
+                rotate(45deg);
+
+        }
+
+
+        .pm-grid {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                100px;
+
+            align-items:
+                center;
+
+        }
+
+
+        .pm-content h2 {
+
+            font-size:
+                clamp(
+                    38px,
+                    4vw,
+                    58px
+                );
+
+            line-height:
+                1.05;
+
+            letter-spacing:
+                -2px;
+
+            margin-bottom:
+                25px;
+
+        }
+
+
+        .pm-content h2 span {
+
+            color:
+                var(--blue);
+
+        }
+
+
+        .pm-content p {
+
+            color:
+                var(--text);
+
+            font-size:
+                15px;
+
+            line-height:
+                1.9;
+
+        }
+
+
+        .pm-framework {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                1px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.10
+                );
+
+        }
+
+
+        .pm-item {
+
+            padding:
+                30px;
+
+            min-height:
+                150px;
+
+            background:
+                #0b1927;
+
+            transition:
+                0.3s ease;
+
+        }
+
+
+        .pm-item:hover {
+
+            background:
+                #132a3c;
+
+        }
+
+
+        .pm-item-number {
+
+            color:
+                var(--blue);
+
+            font-size:
+                12px;
+
+            font-weight:
+                700;
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .pm-item h3 {
+
+            font-size:
+                16px;
+
+            margin-bottom:
+                8px;
+
+        }
+
+
+        .pm-item p {
+
+            color:
+                var(--muted);
+
+            font-size:
+                12px;
+
+            line-height:
+                1.6;
+
+        }
+
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .projects {
+
+            background:
+                var(--light);
+
+            color:
+                var(--dark-text);
+
+        }
+
+
+        .projects .section-label {
+
+            color:
+                #4f91aa;
+
+        }
+
+
+        .projects-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1.4fr 1fr;
+
+            gap:
+                25px;
+
+        }
+
+
+        .project {
+
+            position:
+                relative;
+
+            height:
+                500px;
+
+            overflow:
+                hidden;
+
+            background:
+                #dce2e5;
+
+        }
+
+
+        .project.small {
+
+            height:
+                238px;
+
+        }
+
+
+        .project img {
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            object-fit:
+                cover;
+
+            transition:
+                transform
+                0.8s
+                ease;
+
+        }
+
+
+        .project:hover img {
+
+            transform:
+                scale(
+                    1.06
+                );
+
+        }
+
+
+        .project-overlay {
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            justify-content:
+                flex-end;
+
+            padding:
+                35px;
+
+            background:
+
+                linear-gradient(
+                    transparent 30%,
+                    rgba(
+                        0,
+                        0,
+                        0,
+                        0.85
+                    )
+                );
+
+            color:
+                white;
+
+        }
+
+
+        .project-overlay h3 {
+
+            font-size:
+                25px;
+
+            margin-bottom:
+                7px;
+
+        }
+
+
+        .project-overlay p {
+
+            font-size:
+                13px;
+
+            color:
+                #cbd3d8;
+
+        }
+
+
+        .project-column {
+
+            display:
+                grid;
+
+            gap:
+                25px;
+
+        }
+
+
+        /* =====================================================
+           SECTORS
+        ===================================================== */
+
+        .sectors {
+
+            background:
+                #f3f5f6;
+
+            color:
+                var(--dark-text);
+
+        }
+
+
+        .sectors .section-label {
+
+            color:
+                #4f91aa;
+
+        }
+
+
+        .sectors-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    5,
+                    1fr
+                );
+
+            gap:
+                1px;
+
+            background:
+                #ccd3d7;
+
+        }
+
+
+        .sector {
+
+            padding:
+                35px 25px;
+
+            min-height:
+                180px;
+
+            background:
+                #f3f5f6;
+
+            transition:
+                0.3s ease;
+
+        }
+
+
+        .sector:hover {
+
+            background:
+                white;
+
+            transform:
+                translateY(-5px);
+
+        }
+
+
+        .sector-number {
+
+            color:
+                #4f91aa;
+
+            font-size:
+                12px;
+
+            font-weight:
+                700;
+
+            margin-bottom:
+                45px;
+
+        }
+
+
+        .sector h3 {
+
+            font-size:
+                18px;
+
+        }
+
+
+        /* =====================================================
+           METHODOLOGY
+        ===================================================== */
+
+        .methodology {
+
+            background:
+                var(--dark);
+
+        }
+
+
+        .method-intro {
+
+            max-width:
+                700px;
+
+            color:
+                var(--muted);
+
+            line-height:
+                1.8;
+
+            margin-top:
+                -30px;
+
+            margin-bottom:
+                55px;
+
+        }
+
+
+        .method-line {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    5,
+                    1fr
+                );
+
+            border-top:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.15
+                );
+
+        }
+
+
+        .method {
+
+            padding:
+                35px 25px;
+
+            border-right:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.12
+                );
+
+            transition:
+                0.3s ease;
+
+        }
+
+
+        .method:last-child {
+
+            border-right:
+                none;
+
+        }
+
+
+        .method:hover {
+
+            background:
+                rgba(
+                    101,
+                    169,
+                    194,
+                    0.08
+                );
+
+        }
+
+
+        .method-number {
+
+            color:
+                var(--blue);
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
+
+            margin-bottom:
+                45px;
+
+        }
+
+
+        .method h3 {
+
+            font-size:
+                19px;
+
+            margin-bottom:
+                10px;
+
+        }
+
+
+        .method p {
+
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+
+            line-height:
+                1.6;
+
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about {
+
+            background:
+                var(--dark-3);
+
+        }
+
+
+        .about-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                90px;
+
+            align-items:
+                center;
+
+        }
+
+
+        .about h2 {
+
+            font-size:
+                clamp(
+                    35px,
+                    4vw,
+                    55px
+                );
+
+            line-height:
+                1.05;
+
+            letter-spacing:
+                -2px;
+
+        }
+
+
+        .about-text {
+
+            color:
+                var(--text);
+
+            line-height:
+                1.9;
+
+            font-size:
+                15px;
+
+        }
+
+
+        .about-highlight {
+
+            margin-top:
+                35px;
+
+            padding-left:
+                20px;
+
+            border-left:
+                2px solid
+                var(--blue);
+
+            color:
+                var(--blue-bright);
+
+            font-size:
+                14px;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .cta {
+
+            padding:
+                110px 40px;
+
+            text-align:
+                center;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #102536,
+                    #07111c
+                );
+
+        }
+
+
+        .cta h2 {
+
+            max-width:
+                900px;
+
+            margin:
+                0 auto 20px;
+
+            font-size:
+                clamp(
+                    38px,
+                    5vw,
+                    68px
+                );
+
+            letter-spacing:
+                -2px;
+
+            line-height:
+                1.05;
+
+        }
+
+
+        .cta p {
+
+            color:
+                var(--muted);
+
+            max-width:
+                650px;
+
+            margin:
+                0 auto 35px;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        .contact-data {
+
+            margin-top:
+                45px;
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            gap:
+                35px;
+
+            flex-wrap:
+                wrap;
+
+            color:
+                var(--text);
+
+            font-size:
+                13px;
+
+        }
+
+
+        .contact-data span {
+
+            color:
+                var(--muted);
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            padding:
+                40px;
+
+            background:
+                #040b12;
+
+            color:
+                var(--muted);
+
+            font-size:
+                11px;
+
+        }
+
+
+        .footer-inner {
+
+            max-width:
+                var(--max-width);
+
+            margin:
+                auto;
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+        }
+
+
+        .footer-company {
+
+            color:
+                #d9e1e7;
+
+            font-weight:
+                600;
+
+        }
+
+
+        /* =====================================================
+           ANIMATIONS
+        ===================================================== */
+
+        @keyframes appear {
+
+            to {
+
+                opacity:
+                    1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1100px) {
+
+            .services-grid {
+
+                grid-template-columns:
+                    repeat(
+                        3,
+                        1fr
+                    );
+
+            }
+
+
+            .sectors-grid {
+
+                grid-template-columns:
+                    repeat(
+                        3,
+                        1fr
+                    );
+
+            }
+
+        }
+
+
+        @media (max-width: 900px) {
+
+            .menu {
+
+                display:
+                    none;
+
+            }
+
+
+            .services-grid {
+
+                grid-template-columns:
+                    repeat(
+                        2,
+                        1fr
+                    );
+
+            }
+
+
+            .projects-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .method-line {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .method {
+
+                border-right:
+                    none;
+
+                border-bottom:
+                    1px solid
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        0.12
+                    );
+
+            }
+
+
+            .about-grid,
+            .pm-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    45px;
+
+            }
+
+
+            .sectors-grid {
+
+                grid-template-columns:
+                    repeat(
+                        2,
+                        1fr
+                    );
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            header {
+
+                padding:
+                    15px 20px;
+
+            }
+
+
+            .logo img {
+
+                width:
+                    140px;
+
+            }
+
+
+            .hero-content {
+
+                padding:
+                    130px 25px 80px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    46px;
+
+            }
+
+
+            .hero-description {
+
+                font-size:
+                    15px;
+
+            }
+
+
+            .hero-buttons {
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            .hero-stats {
+
+                flex-direction:
+                    column;
+
+                gap:
+                    12px;
+
+            }
+
+
+            section {
+
+                padding:
+                    80px 25px;
+
+            }
+
+
+            .services-grid,
+            .sectors-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .project {
+
+                height:
+                    380px;
+
+            }
+
+
+            .project.small {
+
+                height:
+                    250px;
+
+            }
+
+
+            .pm-framework {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .contact-data {
+
+                flex-direction:
+                    column;
+
+                gap:
+                    12px;
+
+            }
+
+
+            .footer-inner {
+
+                flex-direction:
+                    column;
+
+                gap:
+                    20px;
+
+                text-align:
+                    center;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+    <nav class="nav">
+
+        <a
+            href="#inicio"
+            class="logo"
+            aria-label="BIM-CLASH"
+        >
+
+            <img
+                src="Bimclash_10.png"
+                alt="BIM-CLASH"
+            >
+
+        </a>
+
+
+        <div class="menu">
+
+            <a href="#servicios">
+                Servicios
+            </a>
+
+            <a href="#proyectos">
+                Proyectos
+            </a>
+
+            <a href="#metodologia">
+                Metodología
+            </a>
+
+            <a href="#sectores">
+                Sectores
+            </a>
+
+            <a href="#nosotros">
+                Nosotros
+            </a>
+
+            <a
+                href="#contacto"
+                class="nav-button"
+            >
+                Contacto →
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section
+    id="inicio"
+    class="hero"
+>
+
+    <div class="hero-content">
+
+
+        <div class="eyebrow">
+
+            BIM · PROJECT MANAGEMENT · CONSTRUCCIÓN
+
+        </div>
+
+
+        <h1>
+
+            Del proyecto al modelo.
+            <span>
+                Del modelo a la obra.
+            </span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Integramos BIM, coordinación y gestión de
+            proyectos para mejorar la planificación,
+            coordinación y control de proyectos de
+            arquitectura, ingeniería y construcción.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#proyectos"
+                class="button button-primary"
+            >
+                Ver proyectos →
+            </a>
+
+
+            <a
+                href="#servicios"
+                class="button button-secondary"
+            >
+                Conoce nuestros servicios
+            </a>
+
+        </div>
+
+
+        <div class="hero-stats">
+
+            <span>
+                Modelado BIM
+            </span>
+
+            <span>
+                Coordinación BIM
+            </span>
+
+            <span>
+                Clash Detection
+            </span>
+
+            <span>
+                Project Management
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section
+    id="servicios"
+    class="services"
+>
+
+    <div class="container">
+
+
+        <div class="section-label">
+            Servicios
+        </div>
+
+
+        <h2 class="section-title">
+
+            Tecnología BIM y gestión de proyectos
+            integradas en una misma visión.
+
+        </h2>
+
+
+        <p class="services-intro">
+
+            Integramos capacidades técnicas y de gestión
+            para acompañar los proyectos desde la generación
+            de información BIM hasta la planificación,
+            coordinación y control de sus principales
+            variables.
+
+        </p>
+
+
+        <div class="services-grid">
+
+
+            <article class="service">
+
+                <div class="service-number">
+                    01
+                </div>
+
+                <div class="service-category">
+                    BIM
+                </div>
+
+                <h3>
+                    Modelado BIM
+                </h3>
+
+                <p>
+
+                    Desarrollo y estructuración de modelos
+                    BIM con información gráfica y técnica
+                    para las diferentes especialidades.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="service">
+
+                <div class="service-number">
+                    02
+                </div>
+
+                <div class="service-category">
+                    BIM
+                </div>
+
+                <h3>
+                    Coordinación BIM
+                </h3>
+
+                <p>
+
+                    Integración de arquitectura, estructuras
+                    y especialidades MEP dentro de un modelo
+                    coordinado.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="service">
+
+                <div class="service-number">
+                    03
+                </div>
+
+                <div class="service-category">
+                    BIM
+                </div>
+
+                <h3>
+                    Clash Detection
+                </h3>
+
+                <p>
+
+                    Identificación, clasificación y gestión
+                    de interferencias para anticipar problemas
+                    antes de llegar a la construcción.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="service">
+
+                <div class="service-number">
+                    04
+                </div>
+
+                <div class="service-category">
+                    BIM
+                </div>
+
+                <h3>
+                    Gestión BIM
+                </h3>
+
+                <p>
+
+                    Organización y control de información,
+                    estándares y procesos necesarios para
+                    gestionar adecuadamente el entorno BIM.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="service">
+
+                <div class="service-number">
+                    05
+                </div>
+
+                <div class="service-category">
+                    Project Management
+                </div>
+
+                <h3>
+                    Dirección y Gestión de Proyectos
+                </h3>
+
+                <p>
+
+                    Planificación, coordinación y seguimiento
+                    de proyectos considerando alcance, plazo,
+                    costos, riesgos, recursos y entregables.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROJECT MANAGEMENT
+========================================================= -->
+
+<section class="project-management">
+
+    <div class="container">
+
+
+        <div class="pm-grid">
+
+
+            <div class="pm-content">
+
+
+                <div class="section-label">
+
+                    Project Management
+
+                </div>
+
+
+                <h2>
+
+                    Gestionar el proyecto.
+                    <span>
+                        Controlar su evolución.
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Complementamos nuestra capacidad técnica
+                    BIM con una visión orientada a la
+                    planificación, coordinación y control
+                    integral del proyecto.
+
+                    <br><br>
+
+                    Consideramos las principales variables
+                    que condicionan el desempeño de un proyecto:
+                    alcance, cronograma, costos, recursos,
+                    riesgos, calidad e interesados.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="pm-framework">
+
+
+                <article class="pm-item">
+
+                    <div class="pm-item-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Alcance
+                    </h3>
+
+                    <p>
+                        Definición y control de entregables
+                        y objetivos.
+                    </p>
+
+                </article>
+
+
+
+                <article class="pm-item">
+
+                    <div class="pm-item-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Cronograma
+                    </h3>
+
+                    <p>
+                        Planificación y seguimiento de
+                        actividades y plazos.
+                    </p>
+
+                </article>
+
+
+
+                <article class="pm-item">
+
+                    <div class="pm-item-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Costos
+                    </h3>
+
+                    <p>
+                        Seguimiento y control de recursos
+                        económicos.
+                    </p>
+
+                </article>
+
+
+
+                <article class="pm-item">
+
+                    <div class="pm-item-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Riesgos
+                    </h3>
+
+                    <p>
+                        Identificación y gestión de eventos
+                        que puedan afectar al proyecto.
+                    </p>
+
+                </article>
+
+
+
+                <article class="pm-item">
+
+                    <div class="pm-item-number">
+                        05
+                    </div>
+
+                    <h3>
+                        Recursos
+                    </h3>
+
+                    <p>
+                        Coordinación de equipos y recursos
+                        necesarios.
+                    </p>
+
+                </article>
+
+
+
+                <article class="pm-item">
+
+                    <div class="pm-item-number">
+                        06
+                    </div>
+
+                    <h3>
+                        Calidad
+                    </h3>
+
+                    <p>
+                        Seguimiento de requisitos y criterios
+                        de calidad.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section
+    id="proyectos"
+    class="projects"
+>
+
+    <div class="container">
+
+
+        <div class="section-label">
+            Proyectos
+        </div>
+
+
+        <h2 class="section-title">
+
+            Experiencia aplicada a
+            proyectos reales.
+
+        </h2>
+
+
+        <div class="projects-grid">
+
+
+            <article class="project">
+
+                <img
+                    src="proyecto-01.jpg"
+                    alt="Proyecto BIM"
+                >
+
+
+                <div class="project-overlay">
+
+                    <h3>
+                        Proyecto de Salud
+                    </h3>
+
+                    <p>
+                        Coordinación BIM · Arquitectura ·
+                        Estructuras · MEP
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <div class="project-column">
+
+
+                <article class="project small">
+
+                    <img
+                        src="proyecto-02.jpg"
+                        alt="Proyecto BIM"
+                    >
+
+                    <div class="project-overlay">
+
+                        <h3>
+                            Proyecto 02
+                        </h3>
+
+                        <p>
+                            Modelado y coordinación BIM
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="project small">
+
+                    <img
+                        src="proyecto-03.jpg"
+                        alt="Proyecto BIM"
+                    >
+
+                    <div class="project-overlay">
+
+                        <h3>
+                            Proyecto 03
+                        </h3>
+
+                        <p>
+                            Clash Detection
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SECTORS
+========================================================= -->
+
+<section
+    id="sectores"
+    class="sectors"
+>
+
+    <div class="container">
+
+
+        <div class="section-label">
+            Sectores
+        </div>
+
+
+        <h2 class="section-title">
+
+            Soluciones para diferentes
+            tipos de proyectos.
+
+        </h2>
+
+
+        <div class="sectors-grid">
+
+
+            <article class="sector">
+
+                <div class="sector-number">
+                    01
+                </div>
+
+                <h3>
+                    Salud
+                </h3>
+
+            </article>
+
+
+
+            <article class="sector">
+
+                <div class="sector-number">
+                    02
+                </div>
+
+                <h3>
+                    Educación
+                </h3>
+
+            </article>
+
+
+
+            <article class="sector">
+
+                <div class="sector-number">
+                    03
+                </div>
+
+                <h3>
+                    Edificaciones
+                </h3>
+
+            </article>
+
+
+
+            <article class="sector">
+
+                <div class="sector-number">
+                    04
+                </div>
+
+                <h3>
+                    Infraestructura
+                </h3>
+
+            </article>
+
+
+
+            <article class="sector">
+
+                <div class="sector-number">
+                    05
+                </div>
+
+                <h3>
+                    Industria
+                </h3>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     METHODOLOGY
+========================================================= -->
+
+<section
+    id="metodologia"
+    class="methodology"
+>
+
+    <div class="container">
+
+
+        <div class="section-label">
+            Metodología
+        </div>
+
+
+        <h2 class="section-title">
+
+            Del proyecto al modelo.
+            Del modelo a la obra.
+
+        </h2>
+
+
+        <p class="method-intro">
+
+            Integramos la gestión del proyecto con la
+            información BIM para generar una visión
+            coordinada durante las diferentes etapas
+            del proyecto.
+
+        </p>
+
+
+        <div class="method-line">
+
+
+            <article class="method">
+
+                <div class="method-number">
+                    01
+                </div>
+
+                <h3>
+                    Planificar
+                </h3>
+
+                <p>
+                    Definimos objetivos, alcance,
+                    entregables y estrategia de trabajo.
+                </p>
+
+            </article>
+
+
+
+            <article class="method">
+
+                <div class="method-number">
+                    02
+                </div>
+
+                <h3>
+                    Modelar
+                </h3>
+
+                <p>
+                    Generamos y estructuramos la
+                    información digital.
+                </p>
+
+            </article>
+
+
+
+            <article class="method">
+
+                <div class="method-number">
+                    03
+                </div>
+
+                <h3>
+                    Coordinar
+                </h3>
+
+                <p>
+                    Integramos las diferentes
+                    especialidades.
+                </p>
+
+            </article>
+
+
+
+            <article class="method">
+
+                <div class="method-number">
+                    04
+                </div>
+
+                <h3>
+                    Controlar
+                </h3>
+
+                <p>
+                    Identificamos desviaciones,
+                    interferencias y riesgos.
+                </p>
+
+            </article>
+
+
+
+            <article class="method">
+
+                <div class="method-number">
+                    05
+                </div>
+
+                <h3>
+                    Entregar
+                </h3>
+
+                <p>
+                    Generamos información coordinada
+                    para facilitar decisiones.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section
+    id="nosotros"
+    class="about"
+>
+
+    <div class="container">
+
+
+        <div class="about-grid">
+
+
+            <div>
+
+                <div class="section-label">
+                    BIMCLASH
+                </div>
+
+
+                <h2>
+
+                    Tecnología, coordinación
+                    y gestión para proyectos
+                    más predecibles.
+
+                </h2>
+
+            </div>
+
+
+
+            <div class="about-text">
+
+
+                <p>
+
+                    <strong>
+                        BIMCLASH
+                    </strong>
+                    integra herramientas digitales,
+                    metodología BIM y gestión de proyectos
+                    para mejorar la forma en que se
+                    planifican, coordinan y ejecutan
+                    los proyectos.
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    Nuestro enfoque busca conectar la
+                    información técnica con la gestión,
+                    facilitando la coordinación entre
+                    especialidades y la toma de decisiones
+                    durante el ciclo de vida del proyecto.
+
+                </p>
+
+
+                <div class="about-highlight">
+
+                    BIM no es solamente un modelo.
+                    Es información para tomar mejores
+                    decisiones.
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+    id="contacto"
+    class="cta"
+>
+
+    <div class="container">
+
+
+        <div class="section-label">
+            Contacto
+        </div>
+
+
+        <h2>
+
+            Llevemos tu proyecto
+            a un entorno más coordinado.
+
+        </h2>
+
+
+        <p>
+
+            BIM, coordinación y gestión de proyectos
+            orientados a mejorar la planificación,
+            coordinación y control.
+
+        </p>
+
+
+        <a
+            href="mailto:contacto@bim-clash.com"
+            class="button button-primary"
+        >
+
+            Contactar BIM-CLASH →
+
+        </a>
+
+
+        <div class="contact-data">
+
+            <div>
+                <span>
+                    Empresa:
+                </span>
+                BIMCLASH
+            </div>
+
+            <div>
+                <span>
+                    RUC:
+                </span>
+                20603869835
+            </div>
+
+            <div>
+                <span>
+                    Web:
+                </span>
+                bim-clash.com
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+
+        <div>
+
+            © 2026
+            <span class="footer-company">
+                BIMCLASH
+            </span>
+
+        </div>
+
+
+        <div>
+
+            RUC 20603869835
+
+        </div>
+
+
+        <div>
+
+            BIM · Coordinación ·
+            Project Management
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
