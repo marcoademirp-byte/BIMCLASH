@@ -1222,7 +1222,7 @@
 
             background:
                 #dce2e5;
-
+            border-radius: 8px;
         }
 
 
@@ -1246,9 +1246,7 @@
                 cover;
 
             transition:
-                transform
-                0.8s
-                ease;
+                transform 0.65s ease;
 
         }
 
@@ -1320,6 +1318,16 @@
             color:
                 #cbd3d8;
 
+        }
+
+        .project-sector {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: #65c8e8;
         }
 
 
@@ -2577,39 +2585,35 @@
      PROJECTS
 ========================================================= -->
 
-<section
-    id="proyectos"
-    class="projects"
->
+
+<section id="proyectos" class="projects">
 
     <div class="container">
-
 
         <div class="section-label">
             Proyectos
         </div>
 
-
         <h2 class="section-title">
-
-            Experiencia aplicada a
-            proyectos reales.
-
+            Experiencia aplicada a proyectos reales.
         </h2>
-
 
         <div class="projects-grid">
 
-
+            <!-- PROYECTO 01: HOSPITAL DE SULLANA -->
             <article class="project">
 
                 <img
-                    src="proyecto-01.jpg"
-                    alt="Proyecto BIM"
+                    src="image/proyecto-01.jpg"
+                    alt="Hospital de Sullana - Proyecto BIM"
+                    loading="lazy"
                 >
 
-
                 <div class="project-overlay">
+
+                    <span class="project-sector">
+                        01 / SALUD
+                    </span>
 
                     <h3>
                         Hospital de Sullana
@@ -2623,19 +2627,22 @@
 
             </article>
 
-
-
             <div class="project-column">
 
-
+                <!-- PROYECTO 02: IE 517 -->
                 <article class="project small">
 
                     <img
-                        src="proyecto-02.jpg"
-                        alt="Proyecto BIM"
+                        src="image/proyecto-02.jpg"
+                        alt="IE 517 Sullana - Proyecto educativo BIM"
+                        loading="lazy"
                     >
 
                     <div class="project-overlay">
+
+                        <span class="project-sector">
+                            02 / EDUCACIÓN
+                        </span>
 
                         <h3>
                             IE 517 - Sullana
@@ -2649,29 +2656,32 @@
 
                 </article>
 
-
-
+                <!-- PROYECTO 03: PALACIO DE LA BATLIA Y SCALA -->
                 <article class="project small">
 
                     <img
-                        src="proyecto-03.jpg"
-                        alt="Proyecto BIM"
+                        src="image/proyecto-03.jpg"
+                        alt="Palacio de la Batlia y Scala - Climatización BIM en Valencia"
+                        loading="lazy"
                     >
 
                     <div class="project-overlay">
 
+                        <span class="project-sector">
+                            03 / CLIMATIZACIÓN
+                        </span>
+
                         <h3>
-                            Palacio de la Batlia y Scala - Valencia, España
+                            Palacio de la Batlia y Scala
                         </h3>
 
                         <p>
-                            Climatización · BIM · Coordinación
+                            Valencia, España · BIM · Climatización
                         </p>
 
                     </div>
 
                 </article>
-
 
             </div>
 
@@ -2680,7 +2690,6 @@
     </div>
 
 </section>
-
 
 
 <!-- =========================================================
